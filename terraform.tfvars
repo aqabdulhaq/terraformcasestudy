@@ -1,0 +1,13 @@
+resource_group_name = "learning"
+location = "East US"
+subnet_name = "my_subnet1"
+vm_name = "my-vm1"
+vm_size = "Standard_DS1_v2"
+image_publisher = "Canonical"
+image_offer = "0001-com-ubuntu-server-jammy"
+image_sku = "22_04-lts"
+admin_username = "azureuser"
+admin_password = "Password@1234" 
+vnet_name = "my_vnet1"
+vnet_address_space = ["10.0.0.0/16"]
+image_version = "latest"

@@ -1,0 +1,20 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DownloadSecureFile@1
+  displayName: 'Download Terraform'
+  inputs:
+    secureFile: 'path/to/terraform-binary'
+
+- script: |
+    ./terraform init
+    ./terraform plan -out=tfplan
+  displayName: 'Terraform Init & Plan'
+
+- script: |
+    ./terraform apply -auto-approve tfplan
+  displayName: 'Terraform Apply'
